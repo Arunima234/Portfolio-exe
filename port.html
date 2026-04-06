@@ -1,0 +1,1181 @@
+<!-- cspell:words aruni Crect Csvg femail fsubject fmsg ARUNIMA CANVA nandi -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PORTFOLIO.EXE</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap');
+
+    :root {
+      --sky: #8ecae6;
+      --mint: #a8dadc;
+      --teal: #457b9d;
+      --dark: #1d3557;
+      --cream: #f1faee;
+      --white: #fff;
+      --win-bg: rgba(241, 250, 238, .96);
+      --accent: #e63946;
+      --grass: #52b788;
+      --pink: #ffb4c8;
+      --bow: #e63946;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      image-rendering: pixelated;
+    }
+
+    body {
+      background: var(--sky);
+      font-family: 'Press Start 2P', monospace;
+      font-size: 10px;
+      color: var(--dark);
+      min-height: 100vh;
+      overflow-x: hidden;
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect x='0' y='0' width='4' height='4' fill='%231d3557'/%3E%3Crect x='4' y='4' width='4' height='4' fill='%231d3557'/%3E%3Crect x='8' y='8' width='4' height='4' fill='%231d3557'/%3E%3Crect x='0' y='4' width='4' height='4' fill='white'/%3E%3Crect x='4' y='0' width='4' height='4' fill='white'/%3E%3C/svg%3E"), auto;
+    }
+
+    .sky-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background: linear-gradient(180deg, #8ecae6 0%, #b8dce8 55%, #cce8d4 100%);
+      overflow: hidden;
+    }
+
+    .stars {
+      position: absolute;
+      inset: 0;
+    }
+
+    .star {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #fff;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from {
+        opacity: .15
+      }
+
+      to {
+        opacity: .9
+      }
+    }
+
+    .cloud-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      animation: scrollClouds 35s linear infinite;
+    }
+
+    @keyframes scrollClouds {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    .ground {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 48px;
+      z-index: 1;
+      background: repeating-linear-gradient(90deg, #2d6a4f 0, #2d6a4f 8px, #52b788 8px, #52b788 16px);
+      border-top: 4px solid #1b4332;
+    }
+
+    /* ═══ PIXEL GIRL WALKER ═══ */
+    .character {
+      position: fixed;
+      bottom: 48px;
+      z-index: 10;
+      animation: walkAcross 14s linear infinite;
+    }
+
+    @keyframes walkAcross {
+      0% {
+        left: -70px;
+        transform: scaleX(1);
+      }
+
+      49% {
+        left: calc(100% + 70px);
+        transform: scaleX(1);
+      }
+
+      50% {
+        left: calc(100% + 70px);
+        transform: scaleX(-1);
+      }
+
+      99% {
+        left: -70px;
+        transform: scaleX(-1);
+      }
+
+      100% {
+        left: -70px;
+        transform: scaleX(1);
+      }
+    }
+
+    .girl-walk {
+      width: 44px;
+      height: 64px;
+      image-rendering: pixelated;
+      animation: girlBob .38s steps(2) infinite;
+    }
+
+    @keyframes girlBob {
+      from {
+        transform: translateY(0)
+      }
+
+      to {
+        transform: translateY(-4px)
+      }
+    }
+
+    /* ═══ PAGE ═══ */
+    .page {
+      position: relative;
+      z-index: 5;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px 16px 80px;
+    }
+
+    /* ═══ WINDOW ═══ */
+    .window {
+      background: var(--win-bg);
+      border: 3px solid var(--dark);
+      box-shadow: 6px 6px 0 var(--dark);
+      margin-bottom: 28px;
+      animation: fadeSlide .5s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translateY(20px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .window:nth-child(1) {
+      animation-delay: .1s
+    }
+
+    .window:nth-child(2) {
+      animation-delay: .25s
+    }
+
+    .window:nth-child(3) {
+      animation-delay: .4s
+    }
+
+    .window:nth-child(4) {
+      animation-delay: .55s
+    }
+
+    .window:nth-child(5) {
+      animation-delay: .7s
+    }
+
+    .win-title-bar {
+      background: var(--dark);
+      color: var(--cream);
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 9px;
+      letter-spacing: 1px;
+    }
+
+    .win-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .win-dot {
+      width: 10px;
+      height: 10px;
+      border: 2px solid var(--cream);
+      cursor: pointer;
+      transition: background .2s;
+    }
+
+    .win-dot:hover {
+      background: var(--accent);
+    }
+
+    .win-body {
+      padding: 20px;
+    }
+
+    /* ═══ HERO ═══ */
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .avatar-box {
+      border: 3px solid var(--dark);
+      background: var(--sky);
+      padding: 8px;
+      flex-shrink: 0;
+    }
+
+    .avatar-girl {
+      width: 88px;
+      height: 104px;
+      image-rendering: pixelated;
+      display: block;
+    }
+
+    .hero-text h1 {
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    .blink {
+      animation: blink 1s steps(1) infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0
+      }
+    }
+
+    .status-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .badge {
+      background: var(--dark);
+      color: var(--cream);
+      padding: 4px 8px;
+      font-size: 7px;
+      border: 2px solid var(--teal);
+    }
+
+    .badge.green {
+      background: var(--grass);
+      color: var(--dark);
+    }
+
+    .badge.pink {
+      background: var(--pink);
+      color: var(--dark);
+      border-color: var(--bow);
+    }
+
+    /* ═══ ABOUT ═══ */
+    .about-text {
+      font-family: 'VT323', monospace;
+      font-size: 20px;
+      line-height: 2;
+      color: var(--dark);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .stat-card {
+      border: 2px solid var(--dark);
+      padding: 10px 8px;
+      text-align: center;
+      background: var(--sky);
+      position: relative;
+    }
+
+    .stat-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background: var(--teal);
+    }
+
+    .stat-num {
+      font-size: 18px;
+      color: var(--teal);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 7px;
+    }
+
+    /* ═══ LANGUAGES ═══ */
+    .lang-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .lang-item {
+      margin-bottom: 14px;
+    }
+
+    .lang-name {
+      font-size: 8px;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .lang-bar-bg {
+      height: 14px;
+      background: var(--mint);
+      border: 2px solid var(--dark);
+      overflow: hidden;
+    }
+
+    .lang-bar-fill {
+      height: 100%;
+      width: 0;
+      background: repeating-linear-gradient(90deg, var(--teal) 0, var(--teal) 8px, var(--dark) 8px, var(--dark) 10px);
+    }
+
+    /* ═══ GITHUB ═══ */
+    .github-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+    }
+
+    .repo-card {
+      border: 2px solid var(--dark);
+      padding: 12px;
+      background: var(--cream);
+      cursor: pointer;
+      transition: transform .1s, box-shadow .1s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .repo-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0 var(--dark);
+    }
+
+    .repo-card:active {
+      transform: translate(2px, 2px);
+      box-shadow: none;
+    }
+
+    .repo-name {
+      font-size: 8px;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+
+    .repo-desc {
+      font-family: 'VT323', monospace;
+      font-size: 16px;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .repo-lang {
+      font-size: 7px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lang-dot {
+      width: 8px;
+      height: 8px;
+      border: 1px solid var(--dark);
+      display: inline-block;
+    }
+
+    .github-cta {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 16px;
+      background: var(--dark);
+      color: var(--cream);
+      font-size: 8px;
+      text-decoration: none;
+      border: 2px solid var(--dark);
+      box-shadow: 4px 4px 0 var(--teal);
+      transition: all .1s;
+      cursor: pointer;
+      font-family: 'Press Start 2P', monospace;
+    }
+
+    .github-cta:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 var(--teal);
+    }
+
+    /* ═══ CONTACT ═══ */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .contact-item {
+      border: 2px solid var(--dark);
+      padding: 14px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: all .1s;
+      text-decoration: none;
+      color: inherit;
+      background: var(--cream);
+    }
+
+    .contact-item:hover {
+      background: var(--dark);
+      color: var(--cream);
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0 var(--teal);
+    }
+
+    .contact-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 7px;
+      line-height: 1.8;
+    }
+
+    .contact-val {
+      font-family: 'VT323', monospace;
+      font-size: 16px;
+    }
+
+    /* ═══ FORM ═══ */
+    .contact-form {
+      border: 2px solid var(--dark);
+      padding: 16px;
+      background: var(--cream);
+    }
+
+    .form-field {
+      margin-bottom: 14px;
+    }
+
+    .form-label {
+      font-size: 7px;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .form-input {
+      width: 100%;
+      border: 2px solid var(--dark);
+      background: var(--white);
+      padding: 8px;
+      font-family: 'VT323', monospace;
+      font-size: 18px;
+      color: var(--dark);
+      outline: none;
+    }
+
+    .form-input:focus {
+      background: var(--mint);
+      border-color: var(--teal);
+    }
+
+    .form-input.err {
+      border-color: var(--accent);
+      background: #fff0f3;
+    }
+
+    textarea.form-input {
+      height: 80px;
+      resize: none;
+    }
+
+    .form-submit {
+      background: var(--teal);
+      color: var(--cream);
+      border: 2px solid var(--dark);
+      padding: 10px 20px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 var(--dark);
+      transition: all .1s;
+      width: 100%;
+    }
+
+    .form-submit:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 var(--dark);
+    }
+
+    .form-submit:active {
+      transform: translate(2px, 2px);
+      box-shadow: none;
+    }
+
+    .form-submit:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: 4px 4px 0 var(--dark);
+    }
+
+    .field-err {
+      font-size: 7px;
+      color: var(--accent);
+      margin-top: 4px;
+      display: none;
+    }
+
+    .form-input.err+.field-err {
+      display: block;
+    }
+
+    /* ═══ TOAST ═══ */
+    .toast {
+      position: fixed;
+      bottom: 70px;
+      left: 50%;
+      transform: translateX(-50%) translateY(16px);
+      background: var(--dark);
+      color: var(--cream);
+      padding: 12px 20px;
+      font-size: 8px;
+      border: 2px solid var(--teal);
+      box-shadow: 4px 4px 0 var(--teal);
+      opacity: 0;
+      transition: all .3s;
+      z-index: 999;
+      white-space: nowrap;
+      pointer-events: none;
+      line-height: 2;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .toast.bad {
+      border-color: var(--accent);
+      box-shadow: 4px 4px 0 var(--accent);
+    }
+
+    /* ═══ MISC ═══ */
+    .sec-label {
+      font-size: 8px;
+      letter-spacing: 3px;
+      color: var(--teal);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sec-label::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: var(--teal);
+    }
+
+    .loading-bar {
+      height: 8px;
+      background: var(--mint);
+      border: 2px solid var(--dark);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .loading-fill {
+      height: 100%;
+      width: 0;
+      background: repeating-linear-gradient(90deg, var(--teal) 0, var(--teal) 6px, var(--dark) 6px, var(--dark) 8px);
+      animation: loadAnim 2s steps(20) 0s forwards;
+    }
+
+    @keyframes loadAnim {
+      to {
+        width: 100%
+      }
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      pointer-events: none;
+      background: repeating-linear-gradient(180deg, transparent 0, transparent 3px, rgba(0, 0, 0, .03) 3px, rgba(0, 0, 0, .03) 4px);
+    }
+
+    @media(max-width:500px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lang-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text h1 {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sky-bg">
+    <div class="stars" id="stars"></div>
+    <div class="cloud-layer" id="cloudLayer"></div>
+  </div>
+
+  <!-- ══ WALKING PIXEL GIRL ══ -->
+  <div class="character">
+    <!--
+    Pixel art girl: long black hair, rosy cheeks, pink dress, red bow, white collar
+    Each <rect> is one "pixel block" in a 22×32 pixel canvas
+  -->
+    <svg class="girl-walk" viewBox="0 0 22 32" xmlns="http://www.w3.org/2000/svg">
+      <!-- ── Long hair (back layer, darkest) ── -->
+      <rect x="3" y="1" width="16" height="2" fill="#140800" /><!-- top hair -->
+      <rect x="2" y="3" width="18" height="2" fill="#140800" />
+      <rect x="2" y="5" width="3" height="9" fill="#140800" /><!-- left side hair -->
+      <rect x="17" y="5" width="3" height="9" fill="#140800" /><!-- right side hair -->
+      <rect x="3" y="14" width="2" height="8" fill="#140800" /><!-- long left strand -->
+      <rect x="17" y="14" width="2" height="8" fill="#140800" /><!-- long right strand -->
+
+      <!-- ── Face ── -->
+      <rect x="5" y="3" width="12" height="10" fill="#f5c3a0" />
+      <!-- inner hair top (fringe) -->
+      <rect x="5" y="3" width="12" height="3" fill="#1a0800" />
+      <rect x="6" y="5" width="3" height="2" fill="#1a0800" />
+      <rect x="13" y="5" width="3" height="2" fill="#1a0800" />
+
+      <!-- ── Eyes ── -->
+      <rect x="7" y="7" width="2" height="2" fill="#1d3557" />
+      <rect x="13" y="7" width="2" height="2" fill="#1d3557" />
+      <!-- eye shine -->
+      <rect x="8" y="7" width="1" height="1" fill="#fff" opacity=".7" />
+      <rect x="14" y="7" width="1" height="1" fill="#fff" opacity=".7" />
+      <!-- lashes -->
+      <rect x="7" y="6" width="3" height="1" fill="#1a0800" />
+      <rect x="13" y="6" width="3" height="1" fill="#1a0800" />
+
+      <!-- ── Cheeks ── -->
+      <rect x="5" y="9" width="3" height="2" fill="#f4a2b5" opacity=".65" />
+      <rect x="14" y="9" width="3" height="2" fill="#f4a2b5" opacity=".65" />
+
+      <!-- ── Nose & mouth ── -->
+      <rect x="10" y="9" width="2" height="1" fill="#d9906a" opacity=".5" />
+      <rect x="9" y="11" width="4" height="1" fill="#c0705a" />
+      <rect x="8" y="11" width="1" height="1" fill="#c0705a" opacity=".5" />
+      <rect x="13" y="11" width="1" height="1" fill="#c0705a" opacity=".5" />
+
+      <!-- ── Red bow on head ── -->
+      <rect x="1" y="2" width="4" height="3" fill="#e63946" />
+      <rect x="2" y="1" width="2" height="5" fill="#e63946" />
+      <rect x="2" y="3" width="2" height="1" fill="#ff8090" /><!-- bow highlight -->
+
+      <!-- ── Neck ── -->
+      <rect x="9" y="13" width="4" height="2" fill="#f5c3a0" />
+
+      <!-- ── White collar ── -->
+      <rect x="7" y="14" width="8" height="2" fill="#ffffff" />
+      <rect x="6" y="15" width="10" height="1" fill="#e0e0e0" />
+
+      <!-- ── Pink dress body ── -->
+      <rect x="5" y="16" width="12" height="7" fill="#ffb4c8" />
+      <!-- dress shadow/depth -->
+      <rect x="5" y="16" width="2" height="7" fill="#ff8fab" />
+      <rect x="15" y="16" width="2" height="7" fill="#ff8fab" />
+      <!-- dress belt -->
+      <rect x="5" y="19" width="12" height="2" fill="#e63946" opacity=".4" />
+
+      <!-- ── Dress flare ── -->
+      <rect x="3" y="22" width="16" height="3" fill="#ff8fab" />
+      <rect x="2" y="24" width="18" height="2" fill="#ffb4c8" />
+
+      <!-- ── Arms ── -->
+      <rect x="2" y="16" width="3" height="5" fill="#f5c3a0" />
+      <rect x="17" y="16" width="3" height="5" fill="#f5c3a0" />
+      <!-- hands -->
+      <rect x="2" y="21" width="3" height="2" fill="#f5c3a0" />
+      <rect x="17" y="21" width="3" height="2" fill="#f5c3a0" />
+
+      <!-- ── Legs ── -->
+      <rect x="7" y="26" width="3" height="4" fill="#f5c3a0" />
+      <rect x="12" y="26" width="3" height="4" fill="#f5c3a0" />
+
+      <!-- ── Shoes (black, cute rounded) ── -->
+      <rect x="6" y="29" width="5" height="2" fill="#1a0800" />
+      <rect x="11" y="29" width="5" height="2" fill="#1a0800" />
+      <!-- shoe shine -->
+      <rect x="7" y="29" width="2" height="1" fill="#333" opacity=".4" />
+      <rect x="12" y="29" width="2" height="1" fill="#333" opacity=".4" />
+    </svg>
+  </div>
+
+  <div class="ground"></div>
+  <div class="toast" id="toast"></div>
+
+  <div class="page">
+
+    <!-- ═══ HERO ═══ -->
+    <div class="window">
+      <div class="win-title-bar">
+        <span>PORTFOLIO.EXE — v1.0.0</span>
+        <div class="win-dots">
+          <div class="win-dot"></div>
+          <div class="win-dot"></div>
+        </div>
+      </div>
+      <div class="win-body">
+        <div class="loading-bar">
+          <div class="loading-fill"></div>
+        </div>
+        <div class="hero">
+          <div class="avatar-box">
+            <!-- Large avatar version of girl -->
+            <svg class="avatar-girl" viewBox="0 0 22 26" xmlns="http://www.w3.org/2000/svg">
+              <!-- Back hair -->
+              <rect x="3" y="1" width="16" height="2" fill="#140800" />
+              <rect x="2" y="3" width="18" height="2" fill="#140800" />
+              <rect x="2" y="5" width="3" height="9" fill="#140800" />
+              <rect x="17" y="5" width="3" height="9" fill="#140800" />
+              <rect x="3" y="14" width="2" height="7" fill="#140800" />
+              <rect x="17" y="14" width="2" height="7" fill="#140800" />
+              <!-- Face -->
+              <rect x="5" y="3" width="12" height="10" fill="#f5c3a0" />
+              <rect x="5" y="3" width="12" height="3" fill="#1a0800" />
+              <rect x="6" y="5" width="3" height="2" fill="#1a0800" />
+              <rect x="13" y="5" width="3" height="2" fill="#1a0800" />
+              <!-- Eyes -->
+              <rect x="7" y="7" width="2" height="2" fill="#1d3557" />
+              <rect x="13" y="7" width="2" height="2" fill="#1d3557" />
+              <rect x="8" y="7" width="1" height="1" fill="#fff" opacity=".7" />
+              <rect x="14" y="7" width="1" height="1" fill="#fff" opacity=".7" />
+              <rect x="7" y="6" width="3" height="1" fill="#1a0800" />
+              <rect x="13" y="6" width="3" height="1" fill="#1a0800" />
+              <!-- Cheeks -->
+              <rect x="5" y="9" width="3" height="2" fill="#f4a2b5" opacity=".7" />
+              <rect x="14" y="9" width="3" height="2" fill="#f4a2b5" opacity=".7" />
+              <!-- Mouth -->
+              <rect x="9" y="11" width="4" height="1" fill="#c0705a" />
+              <rect x="8" y="11" width="1" height="1" fill="#c0705a" opacity=".5" />
+              <rect x="13" y="11" width="1" height="1" fill="#c0705a" opacity=".5" />
+              <!-- Bow -->
+              <rect x="1" y="2" width="4" height="3" fill="#e63946" />
+              <rect x="2" y="1" width="2" height="5" fill="#e63946" />
+              <rect x="2" y="3" width="2" height="1" fill="#ff8090" />
+              <!-- Neck -->
+              <rect x="9" y="13" width="4" height="2" fill="#f5c3a0" />
+              <!-- Collar -->
+              <rect x="7" y="14" width="8" height="2" fill="#fff" />
+              <!-- Dress -->
+              <rect x="5" y="16" width="12" height="6" fill="#ffb4c8" />
+              <rect x="5" y="16" width="2" height="6" fill="#ff8fab" />
+              <rect x="15" y="16" width="2" height="6" fill="#ff8fab" />
+              <rect x="3" y="21" width="16" height="3" fill="#ff8fab" />
+              <rect x="2" y="23" width="18" height="2" fill="#ffb4c8" />
+            </svg>
+          </div>
+          <div class="hero-text">
+            <h1>HI, I'M ARUNIMA<span class="blink">_</span></h1>
+            <div class="status-bar">
+              <span class="badge green">● ONLINE</span>
+              <span class="badge pink">✿ SHE/HER</span>
+              <span class="badge">DESIGNER</span>
+              <span class="badge">DEVELOPER</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ ABOUT ME ═══ -->
+    <div class="window">
+      <div class="win-title-bar">
+        <span>ABOUT_ME.TXT</span>
+        <div class="win-dots">
+          <div class="win-dot"></div>
+          <div class="win-dot"></div>
+        </div>
+      </div>
+      <div class="win-body">
+        <div class="sec-label">// ABOUT ME</div>
+        <div class="about-text">
+          Hey there! I'm a passionate designer &amp; developer blending retro aesthetics with modern design. I
+          specialize in creating bold, pixel-perfect interfaces and engaging experiences.<br><br>
+          Currently leveling up my skills and looking for new quests! ⚔️✨
+        </div>
+        <div class="stat-grid">
+          <div class="stat-card"><span class="stat-num">∞</span><span class="stat-label">COFFEE CUPS</span></div>
+          <div class="stat-card"><span class="stat-num">99</span><span class="stat-label">CREATIVITY</span></div>
+          <div class="stat-card"><span class="stat-num">LVL 12</span><span class="stat-label">DEVELOPER</span></div>
+          <div class="stat-card"><span class="stat-num">∞</span><span class="stat-label">AMBITION</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ LANGUAGES ═══ -->
+    <div class="window">
+      <div class="win-title-bar">
+        <span>LANGUAGES.DAT</span>
+        <div class="win-dots">
+          <div class="win-dot"></div>
+          <div class="win-dot"></div>
+        </div>
+      </div>
+      <div class="win-body">
+        <div class="sec-label">// SKILL TREE</div>
+        <div class="lang-grid">
+          <div>
+            <div class="lang-item">
+              <div class="lang-name"><span>JAVASCRIPT</span><span>60%</span></div>
+              <div class="lang-bar-bg">
+                <div class="lang-bar-fill" data-w="60"></div>
+              </div>
+            </div>
+            <div class="lang-item">
+              <div class="lang-name"><span>PYTHON</span><span>75%</span></div>
+              <div class="lang-bar-bg">
+                <div class="lang-bar-fill" data-w="75"></div>
+              </div>
+            </div>
+            <div class="lang-item">
+              <div class="lang-name"><span>HTML / CSS</span><span>95%</span></div>
+              <div class="lang-bar-bg">
+                <div class="lang-bar-fill" data-w="95"></div>
+              </div>
+            </div>
+            <div class="lang-item">
+              <div class="lang-name"><span>AI / ML</span><span>60%</span></div>
+              <div class="lang-bar-bg">
+                <div class="lang-bar-fill" data-w="60"></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="lang-item">
+              <div class="lang-name"><span>ENGLISH</span><span>100%</span></div>
+              <div class="lang-bar-bg">
+                <div class="lang-bar-fill" data-w="100"></div>
+              </div>
+            </div>
+            <div class="lang-item">
+              <div class="lang-name"><span>BENGALI</span><span>100%</span></div>
+              <div class="lang-bar-bg">
+                <div class="lang-bar-fill" data-w="100"></div>
+              </div>
+            </div>
+            <div class="lang-item">
+              <div class="lang-name"><span>HINDI</span><span>85%</span></div>
+              <div class="lang-bar-bg">
+                <div class="lang-bar-fill" data-w="85"></div>
+              </div>
+            </div>
+            <div class="lang-item">
+              <div class="lang-name"><span>FIGMA</span><span>65%</span></div>
+              <div class="lang-bar-bg">
+                <div class="lang-bar-fill" data-w="65"></div>
+              </div>
+            </div>
+            <div class="lang-item">
+              <div class="lang-name"><span>CANVA</span><span>95%</span></div>
+              <div class="lang-bar-bg">
+                <div class="lang-bar-fill" data-w="95"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ GITHUB ═══ -->
+    <div class="window">
+      <div class="win-title-bar">
+        <span>GITHUB.EXE</span>
+        <div class="win-dots">
+          <div class="win-dot"></div>
+          <div class="win-dot"></div>
+        </div>
+      </div>
+      <div class="win-body">
+        <div class="sec-label">// RECENT QUESTS</div>
+        <div class="github-grid">
+          <a href="#" class="repo-card">
+            <div class="repo-name">📁 Sound Tracker</div>
+            <div class="repo-desc">A real-time audio visualizer built with Python</div>
+            <div class="repo-lang"><span class="lang-dot" style="background:#f7c59f"></span> Python</div>
+          </a>
+          <a href="#" class="repo-card">
+            <div class="repo-name">📁 Advanced File Management System</div>
+            <div class="repo-desc">An advanced file management application built using Python that allows users to
+              perform various file operations efficiently through both CLI and GUI interfaces.</div>
+            <div class="repo-lang"><span class="lang-dot" style="background:#61dafb"></span> Python</div>
+          </a>
+          <a href="#" class="repo-card">
+            <div class="repo-name">📁 portfolio-exe</div>
+            <div class="repo-desc">This very portfolio — pixel art style ✨</div>
+            <div class="repo-lang"><span class="lang-dot" style="background:#e34c26"></span> HTML/CSS</div>
+          </a>
+          <a href="#" class="repo-card">
+            <div class="repo-name">📁 data-quest</div>
+            <div class="repo-desc">Python scripts for data analysis &amp; visualization</div>
+            <div class="repo-lang"><span class="lang-dot" style="background:#3572A5"></span> Python</div>
+          </a>
+        </div>
+        <a href="https://github.com/Arunima234" target="_blank" class="github-cta">▶ VIEW ALL REPOS ON GITHUB</a>
+      </div>
+    </div>
+
+    <!-- ═══ CONTACT ═══ -->
+    <div class="window">
+      <div class="win-title-bar">
+        <span>CONNECT.EXE</span>
+        <div class="win-dots">
+          <div class="win-dot"></div>
+          <div class="win-dot"></div>
+        </div>
+      </div>
+      <div class="win-body">
+        <div class="sec-label">// SEND A MESSAGE</div>
+        <div class="contact-grid">
+          <a href="mailto:arunimanandi234@gmail.com" class="contact-item">
+            <span class="contact-icon">📧</span>
+            <div class="contact-label">EMAIL<br><span class="contact-val">arunimanandi234@gmail.com</span></div>
+          </a>
+          <a href="https://github.com/Arunima234" target="_blank" class="contact-item">
+            <span class="contact-icon">🐙</span>
+            <div class="contact-label">GITHUB<br><span class="contact-val">@Arunima234</span></div>
+          </a>
+          <a href="https://linkedin.com/in/arunima-nandi-716857276" target="_blank" class="contact-item">
+            <span class="contact-icon">💼</span>
+            <div class="contact-label">LINKEDIN<br><span
+                class="contact-val">linkedin.com/in/arunima-nandi-716857276</span></div>
+          </a>
+          <a href="https://twitter.com/ArunimaNan38717" target="_blank" class="contact-item">
+            <span class="contact-icon">🐦</span>
+            <div class="contact-label">TWITTER<br><span class="contact-val">@ArunimaNan38717</span></div>
+          </a>
+        </div>
+
+        <!-- ══ WORKING CONTACT FORM ══ -->
+        <div class="contact-form">
+          <div class="form-field">
+            <label class="form-label" for="fname">▶ YOUR NAME:</label>
+            <input type="text" id="fname" class="form-input" placeholder="Enter your name..." autocomplete="name">
+            <div class="field-err">⚠ Name is required!</div>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="femail">▶ YOUR EMAIL:</label>
+            <input type="email" id="femail" class="form-input" placeholder="your@email.com" autocomplete="email">
+            <div class="field-err">⚠ Valid email required!</div>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="fsubject">▶ SUBJECT:</label>
+            <input type="text" id="fsubject" class="form-input" placeholder="What's this about?">
+            <div class="field-err">⚠ Subject is required!</div>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="fmsg">▶ MESSAGE:</label>
+            <textarea id="fmsg" class="form-input" placeholder="Type your message here..."></textarea>
+            <div class="field-err">⚠ Message cannot be empty!</div>
+          </div>
+          <button class="form-submit" id="sendBtn" onclick="handleSend()">▶ SEND MESSAGE</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- .page -->
+
+  <script>
+    /* ── Stars ── */
+    const starsEl = document.getElementById('stars');
+    for (let i = 0; i < 40; i++) {
+      const s = document.createElement('div'); s.className = 'star';
+      s.style.cssText = `top:${Math.random() * 65}%;left:${Math.random() * 100}%;animation-delay:${Math.random() * 2}s;width:${Math.random() > .5 ? 4 : 8}px;height:${Math.random() > .5 ? 4 : 8}px;opacity:.${Math.floor(Math.random() * 5) + 2};`;
+      starsEl.appendChild(s);
+    }
+
+    /* ── Clouds ── */
+    const cl = document.getElementById('cloudLayer');
+    for (let c = 0; c < 8; c++) {
+      const sz = 12 + Math.floor(Math.random() * 10); const top = 5 + Math.random() * 40; const left = (c / 8) * 100;
+      const d = document.createElement('div'); d.style.cssText = `position:absolute;top:${top}%;left:${left}%;`;
+      d.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="${sz * 5}" height="${sz * 3}" style="image-rendering:pixelated;">
+    <rect x="${sz}" y="${sz}" width="${sz * 3}" height="${sz * 2}" fill="white"/>
+    <rect x="0" y="${sz * 1.5}" width="${sz * 5}" height="${sz * 1.5}" fill="white"/>
+    <rect x="${sz * .5}" y="${sz * .5}" width="${sz * 2}" height="${sz}" fill="white"/>
+    <rect x="${sz * 2.5}" y="0" width="${sz * 2}" height="${sz * 1.5}" fill="white"/>
+  </svg>`;
+      cl.appendChild(d);
+      const d2 = d.cloneNode(true); d2.style.left = `${left + 50}%`; cl.appendChild(d2);
+    }
+
+    /* ── Animate skill bars on scroll ── */
+    let barsGo = false;
+    function tryBars() {
+      if (barsGo) return;
+      const first = document.querySelector('.lang-bar-fill');
+      if (!first) return;
+      const r = first.closest('.window').getBoundingClientRect();
+      if (r.top < window.innerHeight - 40) {
+        barsGo = true;
+        document.querySelectorAll('.lang-bar-fill').forEach((b, i) => {
+          const w = b.dataset.w || 80;
+          setTimeout(() => { b.style.transition = `width 1.3s steps(${Math.ceil(w / 5)})`; b.style.width = w + '%'; }, i * 80);
+        });
+      }
+    }
+    window.addEventListener('scroll', tryBars); tryBars();
+
+    /* ── Pixel hover sound ── */
+    document.querySelectorAll('.repo-card,.contact-item,.github-cta').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        try {
+          const ctx = new (window.AudioContext || window.webkitAudioContext)();
+          const o = ctx.createOscillator(), g = ctx.createGain();
+          o.connect(g); g.connect(ctx.destination); o.frequency.value = 880; o.type = 'square';
+          g.gain.setValueAtTime(.05, ctx.currentTime); g.gain.exponentialRampToValueAtTime(.001, ctx.currentTime + .08);
+          o.start(); o.stop(ctx.currentTime + .08);
+        } catch (e) { }
+      });
+    });
+
+    /* ── Toast ── */
+    function toast(msg, bad = false) {
+      const t = document.getElementById('toast');
+      t.textContent = msg; t.className = 'toast' + (bad ? ' bad' : '');
+      void t.offsetWidth; t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3800);
+    }
+
+    /* ── Beep ── */
+    function beep(freq, dur, vol = .07) {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const o = ctx.createOscillator(), g = ctx.createGain();
+        o.connect(g); g.connect(ctx.destination); o.frequency.value = freq; o.type = 'square';
+        g.gain.setValueAtTime(vol, ctx.currentTime); g.gain.exponentialRampToValueAtTime(.001, ctx.currentTime + dur);
+        o.start(); o.stop(ctx.currentTime + dur);
+      } catch (e) { }
+    }
+    function chime() { [523, 659, 784].forEach((f, i) => setTimeout(() => beep(f, .15, .06), i * 120)); }
+    function errBeep() { beep(220, .25, .08); }
+
+    /* ══════════════════════════════════════
+       WORKING CONTACT FORM
+       — validates inputs
+       — opens the user's default email client
+         with name, email, subject & message
+         pre-filled in the email body
+    ══════════════════════════════════════ */
+    function handleSend() {
+      const name = document.getElementById('fname').value.trim();
+      const email = document.getElementById('femail').value.trim();
+      const subject = document.getElementById('fsubject').value.trim();
+      const msg = document.getElementById('fmsg').value.trim();
+      const btn = document.getElementById('sendBtn');
+
+      // Clear previous errors
+      ['fname', 'femail', 'fsubject', 'fmsg'].forEach(id => {
+        document.getElementById(id).classList.remove('err');
+      });
+
+      // Validate
+      let ok = true;
+      if (!name) { document.getElementById('fname').classList.add('err'); ok = false; }
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { document.getElementById('femail').classList.add('err'); ok = false; }
+      if (!subject) { document.getElementById('fsubject').classList.add('err'); ok = false; }
+      if (!msg) { document.getElementById('fmsg').classList.add('err'); ok = false; }
+
+      if (!ok) { toast('⚠ PLEASE FILL ALL FIELDS CORRECTLY!', true); errBeep(); return; }
+
+      // Disable & show feedback
+      btn.disabled = true;
+      btn.textContent = '⏳ OPENING MAIL CLIENT...';
+
+      // Build mailto — opens native email app pre-filled
+      const mailTo = 'arunimanandi234@gmail.com'; // ← CHANGE THIS to your real email
+      const mailSubj = encodeURIComponent(`[Portfolio] ${subject}`);
+      const mailBody = encodeURIComponent(
+        `Hi! I found your portfolio and wanted to reach out.\n\n` +
+        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${msg}\n`
+      );
+      window.location.href = `mailto:${mailTo}?subject=${mailSubj}&body=${mailBody}`;
+
+      // Success state after short delay
+      setTimeout(() => {
+        btn.textContent = '✓ EMAIL CLIENT OPENED!';
+        btn.style.background = '#52b788';
+        toast('✓ YOUR EMAIL CLIENT IS OPEN — HIT SEND TO DELIVER YOUR MESSAGE 💌');
+        chime();
+        // Reset
+        setTimeout(() => {
+          btn.disabled = false; btn.textContent = '▶ SEND MESSAGE'; btn.style.background = 'var(--teal)';
+          document.getElementById('fname').value = '';
+          document.getElementById('femail').value = '';
+          document.getElementById('fsubject').value = '';
+          document.getElementById('fmsg').value = '';
+        }, 4500);
+      }, 900);
+    }
+
+    // Enter key shortcut on single-line inputs
+    ['fname', 'femail', 'fsubject'].forEach(id => {
+      document.getElementById(id).addEventListener('keydown', e => { if (e.key === 'Enter') handleSend(); });
+    });
+  </script>
+</body>
+
+</html>
