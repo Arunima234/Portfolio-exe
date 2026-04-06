@@ -1115,10 +1115,6 @@
 
     /* ══════════════════════════════════════
        WORKING CONTACT FORM
-       — validates inputs
-       — opens the user's default email client
-         with name, email, subject & message
-         pre-filled in the email body
     ══════════════════════════════════════ */
     function handleSend() {
       const name = document.getElementById('fname').value.trim();
@@ -1146,7 +1142,7 @@
       btn.textContent = '⏳ OPENING MAIL CLIENT...';
 
       // Build mailto — opens native email app pre-filled
-      const mailTo = 'arunimanandi234@gmail.com'; // ← CHANGE THIS to your real email
+      const mailTo = 'arunimanandi234@gmail.com'; 
       const mailSubj = encodeURIComponent(`[Portfolio] ${subject}`);
       const mailBody = encodeURIComponent(
         `Hi! I found your portfolio and wanted to reach out.\n\n` +
